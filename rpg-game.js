@@ -111,8 +111,8 @@ const questions = [
         text: "That is very kind. <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
         number: 4,
         answers: [
-            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            { text: "Sing On My Own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing By the Sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
@@ -122,8 +122,8 @@ const questions = [
         text: "What generous recommendations! <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
         number: 4,
         answers: [
-            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            { text: "Sing On My Own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing By the Sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
@@ -133,8 +133,8 @@ const questions = [
         text: "What excellent recommendations! <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
         number: 4,
         answers: [
-            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            { text: "Sing On My Own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing By the Sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
@@ -144,8 +144,8 @@ const questions = [
         text: "The tap life is the life for me. <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
         number: 4,
         answers: [
-            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            { text: "Sing On My Own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing By the Sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
