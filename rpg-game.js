@@ -303,7 +303,7 @@ function showResult() {
     let resultText;
     switch(maxCategory) {
         case 'chill':
-            resultText = "Want to go on a <a href='dates/high-line.html'>chill walk<\a> with me?";
+            resultText = "Want to go on a <a href='dates/walk.html'>chill walk<\a> with me?";
             break;
         case 'cozy':
             resultText = "Want to take a <a href='dates/cooking-class.html'>cooking class<\a> with me?";
