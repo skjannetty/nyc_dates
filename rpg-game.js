@@ -112,7 +112,7 @@ const questions = [
         number: 4,
         answers: [
             { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
@@ -123,7 +123,7 @@ const questions = [
         number: 4,
         answers: [
             { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
@@ -134,7 +134,7 @@ const questions = [
         number: 4,
         answers: [
             { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
@@ -145,7 +145,7 @@ const questions = [
         number: 4,
         answers: [
             { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
-            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically appropriate)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
             {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
             {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
             {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
