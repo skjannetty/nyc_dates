@@ -9,12 +9,13 @@ body {
 header {
     background-color: #f0f0f0;
     color: #000000;
-    padding: 0; /* Remove the default padding */
-    margin-bottom: 0; /* Reduce the bottom margin to lessen the distance */
+    padding: 0;
+    margin-bottom: 0;
 }
 
 main {
-    margin: 1vh 5vw; /* Reduce the top margin to lessen the distance, 1vh top/bottom, 5vw left/right */
+    margin: 1vh 5vw;
+    padding-bottom: 10vh; /* Add padding to the bottom to prevent overlap with the footer */
 }
 
 .embark-button {
@@ -38,9 +39,9 @@ footer {
     background-color: #f0f0f0;
     color: #333;
     padding: 1vh; /* 1% of the viewport height */
-    position: fixed;
     width: 100%;
     bottom: 0;
+    position: relative; /* Make footer relative instead of fixed */
 }
 
 ul {
@@ -82,4 +83,11 @@ button {
     cursor: pointer;
     border-radius: 5px; /* Optional: add rounded corners */
     transition: background-color 0.3s ease; /* Optional: add transition effect */
+}
+
+/* Add this class for lists where you want bullets */
+.bulleted-list {
+    list-style-type: disc;
+    padding-left: 20px; /* Add some padding for the bullets */
+    text-align: left; /* Align the text to the left */
 }

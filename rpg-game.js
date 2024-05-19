@@ -9,10 +9,16 @@ let scores = {
 // History stack to keep track of previous states
 let history = [];
 
+// Save original content to restore later
+let originalContent = {
+    scores: '',
+    restart: '',
+    dateListLink: ''
+};
 // Array of questions and answers
 const questions = [
     {
-        text: "You are a game show contestant on everyone's favorite show 'I was a math nerd in high school'. Before you are three doors. Behind two doors are goats. Behind the third door are more goats. We're talking TONS of goats. And you can keep as many as you want! All remaining goats will live the rest of their happy lives on a farm run by my soon-to-be sister-in-law. How many goats do you bring home?",
+        text: "You are a game show contestant on everyone's favorite show 'So you think you were a math nerd in high school'. Before you are three doors. Behind two doors are goats. Behind the third door are more goats. We're talking TONS of goats. And you can keep as many as you want! All remaining goats will live the rest of their happy lives lovingly cared for by my soon-to-be sister-in-law. How many goats do you bring home?",
         number: 1,
         answers: [
             { text: "No goats", scores: { chill: 5, cozy: 3 }, nextQuestionIndex: 1},
@@ -62,38 +68,89 @@ const questions = [
         ]
     },
     {
-        text: "An excellent no-fuss option. <p></p>",
+        text: "An excellent no-fuss option. <p>You know podcasts. Everyone knows podcasts, but you're a podcast connoisseur. You find the diamonds in the ruff, sifting through hours and hours of audio content to find sweet diamond nuggets of glory, and you've been doing this for years. You don't hoard these gems to yourself like some parasocial relationship reveling wyvern. You share your finds with your friends, your family and your partner.<\p><p>Its a Saturday when your partner texts you. They've found a new podcast they like! And they're asking if you like it! You listen with excitement and your partner goes on to describe a podcast you not only already know about, but that you have actively recommended to them on multiple occasions. Your excitement rapidly wanes. In response you:<\p>",
         number: 3,
         answers: [
-            { text: "Baking Cookies", scores: { cozy: 5, chill: 2 } },
-            { text: "Cozy Café", scores: { cozy: 3, adventurous: 2 } }
+            { text: "Say it sounds interesting and let them feel an undeserved sense of satisfaction", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 9 },
+            { text: "Say you know about that podcast and recommend a few of your personal favorite episodes", scores: { cozy: 5, chill: 2, adventurous: 1}, nextQuestionIndex : 10 },
+            { text: "Remind them that you recommended that podcast to them and recommend a few adjacently related podcasts you suspect they'll enjoy", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 11 },
+            {text: "Tell them you recommended that podcast and insist they tap to pay the price of failing to remember. You launch into a weeks long instructional period in which you teach them tap dance. You both quit your jobs and become professional tap dancers.", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 12 }
         ]
     },
     {
-        text: "Cafe",
+        text: "A classic choice. <p>You know podcasts. Everyone knows podcasts, but you're a podcast connoisseur. You find the diamonds in the ruff, sifting through hours and hours of audio content to find sweet diamond nuggets of glory, and you've been doing this for years. You don't hoard these gems to yourself like some parasocial relationship reveling wyvern. You share your finds with your friends, your family and your partner.<\p><p>Its a Saturday when your partner texts you. They've found a new podcast they like! And they're asking if you like it! You listen with excitement and your partner goes on to describe a podcast you not only already know about, but that you have actively recommended to them on multiple occasions. Your excitement rapidly wanes. In response you:<\p>",
         number: 3,
         answers: [
-            { text: "Baking Cookies", scores: { cozy: 5, chill: 2 } },
-            { text: "Cozy Café", scores: { cozy: 3, adventurous: 2 } }
+            { text: "Say it sounds interesting and let them feel an undeserved sense of satisfaction", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 9 },
+            { text: "Say you know about that podcast and recommend a few of your personal favorite episodes", scores: { cozy: 5, chill: 2, adventurous: 1}, nextQuestionIndex : 10 },
+            { text: "Remind them that you recommended that podcast to them and recommend a few adjacently related podcasts you suspect they'll enjoy", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 11 },
+            {text: "Tell them you recommended that podcast and insist they tap to pay the price of failing to remember. You launch into a weeks long instructional period in which you teach them tap dance. You both quit your jobs and become professional tap dancers.", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 12 }
         ]
     },
     {
-        text: "Cookies",
+        text: "Practical and stylish! <p>You know podcasts. Everyone knows podcasts, but you're a podcast connoisseur. You find the diamonds in the ruff, sifting through hours and hours of audio content to find sweet diamond nuggets of glory, and you've been doing this for years. You don't hoard these gems to yourself like some parasocial relationship reveling wyvern. You share your finds with your friends, your family and your partner.<\p><p>Its a Saturday when your partner texts you. They've found a new podcast they like! And they're asking if you like it! You listen with excitement and your partner goes on to describe a podcast you not only already know about, but that you have actively recommended to them on multiple occasions. Your excitement rapidly wanes. In response you:<\p>",
         number: 3,
         answers: [
-            { text: "Baking Cookies", scores: { cozy: 5, chill: 2 } },
-            { text: "Cozy Café", scores: { cozy: 3, adventurous: 2 } }
+            { text: "Say it sounds interesting and let them feel an undeserved sense of satisfaction", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 9 },
+            { text: "Say you know about that podcast and recommend a few of your personal favorite episodes", scores: { cozy: 5, chill: 2, adventurous: 1}, nextQuestionIndex : 10 },
+            { text: "Remind them that you recommended that podcast to them and recommend a few adjacently related podcasts you suspect they'll enjoy", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 11 },
+            {text: "Tell them you recommended that podcast and insist they tap to pay the price of failing to remember. You launch into a weeks long instructional period in which you teach them tap dance. You both quit your jobs and become professional tap dancers.", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 12 }
         ]
     },
     {
-        text: "Cafe",
+        text: "Who needs clothes when you have confidence? <p>You know podcasts. Everyone knows podcasts, but you're a podcast connoisseur. You find the diamonds in the ruff, sifting through hours and hours of audio content to find sweet diamond nuggets of glory, and you've been doing this for years. You don't hoard these gems to yourself like some parasocial relationship reveling wyvern. You share your finds with your friends, your family and your partner.<\p><p>Its a Saturday when your partner texts you. They've found a new podcast they like! And they're asking if you like it! You listen with excitement and your partner goes on to describe a podcast you not only already know about, but that you have actively recommended to them on multiple occasions. Your excitement rapidly wanes. In response you:<\p>",
         number: 3,
         answers: [
-            { text: "Baking Cookies", scores: { cozy: 5, chill: 2 } },
-            { text: "Cozy Café", scores: { cozy: 3, adventurous: 2 } }
+            { text: "Say it sounds interesting and let them feel an undeserved sense of satisfaction", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 9 },
+            { text: "Say you know about that podcast and recommend a few of your personal favorite episodes", scores: { cozy: 5, chill: 2, adventurous: 1}, nextQuestionIndex : 10 },
+            { text: "Remind them that you recommended that podcast to them and recommend a few adjacently related podcasts you suspect they'll enjoy", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 11 },
+            {text: "Tell them you recommended that podcast and insist they tap to pay the price of failing to remember. You launch into a weeks long instructional period in which you teach them tap dance. You both quit your jobs and become professional tap dancers.", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 12 }
         ]
     },
-    // Add more questions here following the same structure
+    {
+        text: "That is very kind. <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
+        number: 4,
+        answers: [
+            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
+            {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
+            {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
+        ]
+    },
+    {
+        text: "What generous recommendations! <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
+        number: 4,
+        answers: [
+            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
+            {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
+            {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
+        ]
+    },
+    {
+        text: "What excellent recommendations! <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
+        number: 4,
+        answers: [
+            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
+            {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
+            {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
+        ]
+    },
+    {
+        text: "The tap life is the life for me. <p> You're walking around Central Park and decide to stop by the sea lion exhibit. You rest your hands on the hand rail of the fence standing between you and your loving sea lion friends, wishing you could break down the barriers that stand between you. A mysterious figure appears behind you and whispers in your ear, 'I can make you a sea lion.'<\p> <p>You turn around to see a wizard in a trench coat. You ask the wizard what he means and he explains that he can turn you into a sea lion for 24 hours. You will be able to swim and play with the other sea lions. You will be able to return to your human form at any time by saying the word 'mango' (the only english word known to be regularly spoken by sea lions). But he wants something in return.<\p> <p>It's not much, just a token really, a trifle. What he wants from you is a performance of a musical theater number of your choice. On the spot. Right now. You:<\p>",
+        number: 4,
+        answers: [
+            { text: "Sing on my own (you probably remember it)", scores: { cozy: 2, chill: 5 }, nextQuestionIndex : 17 },
+            {text: "Sing down by the sea (bad cockney accent and all, very thematically apt)", scores: { cozy: 5, chill: 2,}, nextQuestionIndex : 17 },
+            {text: "Sing Defying Gravity (anyone can belt if they believe)", scores: { adventurous: 5, chaotic: 2 }, nextQuestionIndex : 17 },
+            {text: "Sing all parts in Your Fault (wait a minute...)", scores: {chaotic: 5, adventurous: 2}, nextQuestionIndex : 17 },
+            {text: "Politely decline", scores: {chill: 0, cozy: 0}, nextQuestionIndex : 'breakup' }
+        ]
+    },
 ];
 
 let currentQuestionIndex = 0;
@@ -115,6 +172,7 @@ function showQuestion() {
     let questionText = document.getElementById('question-text');
     let choices = document.getElementById('choices');
     let scoresDiv = document.getElementById('scores');
+    let backButtonDiv = document.getElementById('back-button');
 
     let currentQuestion = questions[currentQuestionIndex];
     gameText.innerHTML = currentQuestion.text;
@@ -125,12 +183,16 @@ function showQuestion() {
     updateScores();
     // Add the Back button if not on the first question
     if (currentQuestionIndex > 0) {
-        scoresDiv.innerHTML += `<button onclick="goBack()">Back</button>`;
+        backButtonDiv.innerHTML = `<button onclick="goBack()">Back</button>`;
+    } else {
+        backButtonDiv.innerHTML = '';
     }
 }
 
+
 function chooseAnswer(answerIndex) {
     let selectedAnswer = questions[currentQuestionIndex].answers[answerIndex];
+    
     // Save the current state to the history stack
     history.push({
         index: currentQuestionIndex,
@@ -143,12 +205,16 @@ function chooseAnswer(answerIndex) {
         scores[category] += selectedAnswer.scores[category];
     }
 
-    // Move to next question
-    currentQuestionIndex = selectedAnswer.nextQuestionIndex;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
+    // Move to next question or show special result
+    if (selectedAnswer.nextQuestionIndex === 'breakup') {
+        showBreakup();
     } else {
-        showResult();
+        currentQuestionIndex = selectedAnswer.nextQuestionIndex;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
     }
 }
 
@@ -168,6 +234,50 @@ function updateScores() {
     `;
 }
 
+function showBreakup() {
+    let gameText = document.getElementById('game-description');
+    let choices = document.getElementById('choices');
+    let questionText = document.getElementById('question-text');
+
+    // Save original content
+    originalContent.scores = document.getElementById('scores').innerHTML;
+    originalContent.restart = document.getElementById('restart').outerHTML;
+    originalContent.dateListLink = document.getElementById('date-list-link').outerHTML;
+
+    // Clear the content
+    document.getElementById('scores').innerHTML = '';
+    document.getElementById('restart').style.display = 'none';
+    document.getElementById('date-list-link').style.display = 'none';
+    document.getElementById('back-button').innerHTML = '';
+    document.getElementById('hl').style.display = 'none';
+
+    questionText.innerHTML = `Goodbye.`;
+    gameText.innerHTML = "We are breaking up.";
+    choices.innerHTML = `<button onclick="reconsiderChoice()">Reconsider Choice</button>`;
+}
+
+function reconsiderChoice() {
+    let questionText = document.getElementById('question-text');
+    let gameText = document.getElementById('game-description');
+    let choices = document.getElementById('choices');
+
+    // Restore the original content
+    document.getElementById('scores').innerHTML = originalContent.scores;
+    document.getElementById('restart').style.display = 'inline';
+    document.getElementById('date-list-link').style.display = 'block';
+    document.getElementById('hl').style.display = 'block';
+
+    // Go back to the previous state
+    if (history.length > 0) {
+        let previousState = history.pop();
+        currentQuestionIndex = previousState.index;
+        scores = previousState.scores;
+        showQuestion();
+    } else {
+        restartGame();
+    }
+}
+
 function showResult() {
     let gameText = document.getElementById('game-description');
     let maxCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
@@ -175,16 +285,16 @@ function showResult() {
     let resultText;
     switch(maxCategory) {
         case 'chill':
-            resultText = "Your ideal date is a peaceful day at a quiet park!";
+            resultText = "Want to go on a <a href='dates/high-line.html'>chill walk<\a> with me?";
             break;
         case 'cozy':
-            resultText = "Your ideal date is a cozy evening baking cookies at home!";
+            resultText = "Want to take a <a href='dates/cooking-class.html'>cooking class<\a> with me?";
             break;
         case 'adventurous':
-            resultText = "Your ideal date is an exciting hiking trip!";
+            resultText = "Want to walk around Brooklyn on a <a href='dates/brewery-tour.html'>brewery tour<\a> with me?";
             break;
         case 'chaotic':
-            resultText = "Your ideal date is a wild adventure at an amusement park!";
+            resultText = "Want to go to a <a href='dates/magic-speakeasy.html'>magic speakeasy<\a> with me?";
             break;
         default:
             resultText = "Explore different activities to find your ideal date!";

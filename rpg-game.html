@@ -10,21 +10,16 @@
     <main>
         <div id="game-container">
             <h3 id="question-text">Question 1</h3>
-            <p id="game-description">You are a game show contestant on everyone's favorite show "I was a math nerd in high school". Before you are three doors. Behind two doors are goats. Behind the third door are more goats. We're talking TONS of goats. And you can keep as many as you want! All remaining goats will live the rest of their happy lives on a farm run by my soon-to-be sister-in-law. How many goats do you bring home?</p>
-            <div id="choices">
-                <button onclick="chooseAnswer(0)">No goats</button>
-                <button onclick="chooseAnswer(1)">1-5 goats</button>
-                <button onclick="chooseAnswer(2)">5-10 goats</button>
-                <button onclick="chooseAnswer(3)">More than 10 goats</button>
-            </div>
-            <div id="scores">
-                <!-- display scores here -->
-            </div>
+            <p id="game-description"></p>
+            <div id="choices"></div>
+            <div id="scores"></div>
+            <div id="back-button"></div>
         </div>
     </main>
     <footer>
+        <hr id="hl"> <!-- Added horizontal line here -->
         <button id="restart" onclick="restartGame()">Restart</button>
-        <p>jk I just want the <a href="date-ideas.html">date list</a></p>
+        <p id="date-list-link">jk I just want the <a href="date-ideas.html">date list</a></p>
     </footer>
     <script src="rpg-game.js"></script>
 </body>
