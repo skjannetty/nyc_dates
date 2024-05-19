@@ -298,29 +298,37 @@ function findMaxCategory(scores) {
 
 function showResult() {
     let gameText = document.getElementById('game-description');
+    let choices = document.getElementById('choices');
     let maxCategory = findMaxCategory(scores);
 
     let resultText;
+    let linkHref;
     switch(maxCategory) {
         case 'chill':
-            resultText = "Want to go on a <a href='dates/walk.html'>chill walk<\a> with me?";
+            resultText = "Want to go on a chill walk with me?";
+            linkHref = 'dates/walk.html';
             break;
         case 'cozy':
-            resultText = "Want to take a <a href='dates/cooking-class.html'>cooking class<\a> with me?";
+            resultText = "Want to take a cooking class with me?";
+            linkHref = 'dates/cooking-class.html';
             break;
         case 'adventurous':
-            resultText = "Want to walk around Brooklyn on a <a href='dates/brewery-tour.html'>brewery tour<\a> with me?";
+            resultText = "Want to walk around Brooklyn on a brewery tour with me?";
+            linkHref = 'dates/brewery-tour.html';
             break;
         case 'chaotic':
-            resultText = "Want to go to a <a href='dates/magic-speakeasy.html'>magic speakeasy<\a> with me?";
+            resultText = "Want to go to a magic speakeasy with me?";
+            linkHref = 'dates/magic-speakeasy.html';
             break;
         default:
             resultText = "Explore different activities to find your ideal date!";
+            linkHref = '#'; // Default link in case of an error
     }
 
     gameText.innerHTML = resultText;
-    document.getElementById('choices').innerHTML = ''; // Remove choices after showing the result
+    choices.innerHTML = `<button onclick="window.location.href='${linkHref}'">Learn more here!</button>`; // Add a button with a link to the date page
 }
+
 
 // Initial setup
 showQuestion();
