@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #f0f0f0;
+    color: #000000;
+    padding: 0; /* Remove the default padding */
+    margin-bottom: 0; /* Reduce the bottom margin to lessen the distance */
+}
+
+main {
+    margin: 1vh 5vw; /* Reduce the top margin to lessen the distance, 1vh top/bottom, 5vw left/right */
+}
+
+.embark-button {
+    display: inline-block;
+    padding: 4vh 8vh;
+    font-size: 4vh;
+    margin: 4vh auto;
+    cursor: pointer;
+    background-color: #03690d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.center-button:hover {
+    background-color: #002e05;
+}
+
+footer {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 1vh; /* 1% of the viewport height */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+ul {
+    list-style-type: none; /* Removes bullets from all unordered lists */
+    padding-left: 0; /* Removes the default padding from the left */
+}
+
+header h1 {
+    font-size: 8vw; 
+    text-align: center; /* This will center the text */
+    word-wrap: break-word; /* This will prevent the text from overflowing */
+}
+
+main h2 {
+    font-size: 4vw; /* This will make the font size 90% of the viewport width */
+    text-align: center; /* This will center the text */
+    word-wrap: break-word; /* This will prevent the text from overflowing */
+}
+
+main h3 {
+    font-size: 3vw; 
+    text-align: center; /* This will center the text */
+    word-wrap: break-word; /* This will prevent the text from overflowing */
+}
+
+#game-container {
+    margin-top: 2vh;
+}
+
+#game-text {
+    font-size: 1.5vw;
+    margin-bottom: 2vh;
+}
+
+button {
+    margin: 5px; /* Adjust this value as needed for more or less space */
+    padding: 5px 5px; /* Optional: adjust padding for a better look */
+    font-size: 16px; /* Optional: adjust font size for readability */
+    cursor: pointer;
+    border-radius: 5px; /* Optional: add rounded corners */
+    transition: background-color 0.3s ease; /* Optional: add transition effect */
+}

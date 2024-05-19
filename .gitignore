@@ -1,0 +1,5 @@
+# Editors
+.vscode/
+
+# Operating Systems
+.DS_Store
