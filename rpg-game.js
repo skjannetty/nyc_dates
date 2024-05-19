@@ -278,9 +278,27 @@ function reconsiderChoice() {
     }
 }
 
+function findMaxCategory(scores) {
+    let maxCategories = [];
+    let maxScore = -Infinity;
+
+    // Find the maximum score and the categories that have this score
+    for (let category in scores) {
+        if (scores[category] > maxScore) {
+            maxScore = scores[category];
+            maxCategories = [category];
+        } else if (scores[category] === maxScore) {
+            maxCategories.push(category);
+        }
+    }
+
+    // If there is a tie, we'll just return the first one. 
+    return maxCategories[0];
+}
+
 function showResult() {
     let gameText = document.getElementById('game-description');
-    let maxCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+    let maxCategory = findMaxCategory(scores);
 
     let resultText;
     switch(maxCategory) {
